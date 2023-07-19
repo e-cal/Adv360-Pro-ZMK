@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -31,6 +30,14 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
+
+    plus1: plus1 {
+        compatible = "zmk,behavior-mod-morph";
+        label = "PLUS1";
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&kp PLUS>, <&kp N1>;
+    };
+        
   };
 
     keymap {
@@ -39,10 +46,10 @@
 
         default_layer {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5                   &tog 1                                                                     &mo 3  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T                    &none                                                              &kp C_VOL_UP   &kp Y     &kp U      &kp I     &kp O     &kp P   &kp BSLH
-   &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G                    &none  &kp LCTRL   &kp LALT                   &kp RALT  &kp RCTRL  &kp C_VOL_DN   &kp H     &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                      &kp LMETA                  &kp RMETA                            &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+ &kp EQUAL    &kp plus1 &kp N2    &kp N3     &kp N4  &kp N5                   &tog 1                                                                     &mo 3  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
+ &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T                    &none                                                              &kp C_VOL_UP   &kp Y     &kp U      &kp I     &kp O     &kp P   &kp BSLH
+ &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G                    &none  &kp LCTRL   &kp LALT                   &kp RALT  &kp RCTRL  &kp C_VOL_DN   &kp H     &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
+ &kp LSHFT    &kp Z     &kp X     &kp C      &kp V   &kp B                                      &kp LMETA                  &kp RMETA                            &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &sl 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BACKSPACE    &kp ESC    &kp DEL                    &kp ESC  &kp ENTER     &kp SPACE          &kp DOWN     &kp UP  &kp LBKT  &kp RBKT      &sl 2
             >;
         };
@@ -79,3 +86,5 @@
 
     };
 };
+
+/* vim: set ft=c */
