@@ -52,7 +52,7 @@
 &kp TAB     &kp Q       &kp W         &kp E          &kp R          &kp T           &kp K_COPY                                                          &kp C_VOL_UP   &kp Y     &kp U      &kp I         &kp O     &kp P        &kp BSLH
 &kp ESC     &kp A       &kp S         &kp D          &kp F          &kp G           &kp K_PASTE     &kp LEFT    &kp RIGHT        &sl 2      &kp RCTRL   &kp C_VOL_DN   &kp H     &kp J      &kp K         &kp L     &kp SEMI     &kp SQT
 &kp LSHFT   &kp Z       &kp X         &kp C          &kp V          &kp B                                       &kp LMETA        &kp UP                                &kp N     &kp M      &kp COMMA     &kp DOT   &kp FSLH     &kp RSHFT
-&kp LCTRL   &kp LMETA   &kp LALT      &kp LEFT       &kp RIGHT                      &kp BACKSPACE   &kp ESC     &kp DEL          &kp DOWN   &kp ENTER   &kp SPACE                &kp RBKT   &kp EQUAL     &kp LBKT  &kp RBKT     &kp RCTRL
+&kp LCTRL   &kp LMETA   &kp LALT      &kp LEFT       &kp RIGHT                      &kp BACKSPACE   &kp LMETA   &kp DEL          &kp DOWN   &kp ENTER   &kp SPACE                &kp RBKT   &none         &kp LBKT  &kp EQUAL    &kp RCTRL
 >;
         };
 
