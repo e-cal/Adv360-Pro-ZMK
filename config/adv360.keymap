@@ -44,6 +44,15 @@
 
     };
 
+    sticky_shift: sticky_shift {
+        compatible = "zmk,behavior-tap-dance";
+        label = "STICKY_SHIFT";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LSHIFT>, <&caps_word>;
+
+    };
+
     back_del: back_del {
         compatible = "zmk,behavior-mod-morph";
         label = "BACK_DEL";
@@ -58,34 +67,34 @@
         compatible = "zmk,keymap";
 
 
-        default {
-            bindings = <
-&kp GRAVE   &kp N1      &kp N2        &kp N3         &kp N4         &kp N5          &tog 1                                                              &mo 2         &kp N6     &kp N7           &kp N8        &kp N9     &kp N0       &none
-&kp TAB     &kp Q       &kp W         &kp E          &kp R          &kp T           &kp K_COPY                                                          &kp C_VOL_UP  &kp Y      &kp U            &kp I         &kp O      &kp P        &kp BSLH
-&kp ESC     &kp A       &kp S         &kp D          &kp F          &kp G           &kp K_PASTE     &kp LEFT    &kp RIGHT        &tog 1     &caps_word  &kp C_VOL_DN  &kp H      &kp J            &kp K         &kp L      &kp SEMI     &kp SQT
-&kp LSHFT   &kp Z       &kp X         &kp C          &kp V          &kp B                                       &kp LCTRL        &kp UP                               &kp N      &kp M            &kp COMMA     &kp DOT    &kp FSLH     &kp RSHFT
-&kp LCTRL   &none       &none         &none          &kp UNDERSCORE                 &back_del       &kp LMETA   &kp LALT         &kp DOWN   &kp ENTER   &kp SPACE                &kp MINUS        &kp RBKT      &kp LBKT   &kp EQUAL    &kp RCTRL
+        layer_0 {
+bindings = <
+&kp GRAVE     &kp N1      &kp N2        &kp N3         &kp N4           &kp N5      &tog 1                                                              &mo 2         &kp N6     &kp N7           &kp N8        &kp N9     &kp N0       &none
+&kp TAB       &kp Q       &kp W         &kp E          &kp R            &kp T       &kp K_COPY                                                          &kp C_VOL_UP  &kp Y      &kp U            &kp I         &kp O      &kp P        &kp BSLH
+&lt 2 ESC     &kp A       &kp S         &hm LSHIFT D   &kp F            &kp G       &kp K_PASTE     &mo 1       &kp LCTRL        &kp RCTRL  &mo 1       &kp C_VOL_DN  &kp H      &kp J            &hm RSHIFT K  &kp L      &kp SEMI     &kp SQT
+&sticky_shift &kp Z       &kp X         &kp C          &kp V            &kp B                                   &none            &none                                &kp N      &kp M            &kp COMMA     &kp DOT    &kp FSLH     &kp RSHFT
+&kp LCTRL     &kp LALT    &none         &none          &kp UNDERSCORE               &kp BACKSPACE   &kp LMETA   &kp LALT         &kp RALT   &kp ENTER   &kp SPACE                &kp MINUS        &kp LBKT      &kp RBKT   &kp EQUAL    &kp RCTRL
 >;                                                                                                                                                                                                                     
         };                                                                                                                                                                                                             
                                                                                                                                                                                                                        
-        keypad {                                                                                                                                                                                                 
-            bindings = <                                                                                                                                                                                               
-&kp F1      &kp F2      &kp F3        &kp F4         &kp F5         &kp F6          &trans                                                              &trans        &kp F7     &kp F8       &kp F9        &kp F10    &kp F11      &kp F12
-&trans      &trans      &trans        &trans         &trans         &trans          &trans                                                              &trans        &trans     &trans       &trans        &trans     &trans       &trans
-&tog 1      &kp LS(N1)  &kp LS(N2)    &kp LS(N3)     &kp LS(N4)     &kp LS(N5)      &trans          &trans      &trans           &trans     &trans      &trans        &kp LS(N6) &kp LS(N7)   &kp LS(N8)    &kp LS(N9) &kp LS(N0)   &trans
-&trans      &trans      &trans        &trans         &trans         &trans                                      &trans           &trans                               &trans     &trans       &trans        &trans     &trans       &trans
-&trans      &trans      &trans        &trans         &trans                         &trans          &trans      &trans           &trans     &trans      &trans                   &trans       &trans        &trans     &trans       &trans
-            >;
+        layer_1 {                                                                                                                                                                                                 
+bindings = <                                                                                                                                                                                               
+&kp F1      &kp F2      &kp F3        &kp F4         &kp F5         &kp F6          &none                                                               &none         &kp F7     &kp F8       &kp F9        &kp F10    &kp F11      &kp F12
+&none       &none       &none         &none          &none          &none           &none                                                               &none         &none      &none        &none         &none      &none        &none 
+&tog 1      &kp LS(N1)  &kp LS(N2)    &kp LS(N3)     &kp LS(N4)     &kp LS(N5)      &none           &none       &none            &tog 1     &none       &none         &kp LS(N6) &kp LS(N7)   &kp LS(N8)    &kp LS(N9) &kp LS(N0)   &none 
+&none       &none       &none         &none          &none          &none                                       &none            &none                                &none      &none        &none         &none      &none        &none 
+&none       &none       &none         &none          &none                          &none           &none       &none            &none      &none       &none                    &none        &none         &none      &none        &none 
+>;
         };
 
-        mod {
-            bindings = <
-  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none                                                                          &trans   &none       &none       &none   &none   &none   &none
-  &none         &none         &none         &none         &none         &none            &bootloader                                                                     &bootloader   &none       &none       &none   &none   &none   &none
-  &none         &none         &none         &none         &none         &none                  &none   &none   &none                  &bt BT_CLR       &none  &rgb_ug RGB_MEFS_CMD 5   &none       &none       &none   &none   &none   &none
-  &none         &none         &none         &none         &none         &none                                  &none                       &none                                       &none       &none       &none   &none   &none   &none
-  &none         &none         &none         &none         &none                                &none   &none   &none                       &none  &bl BL_TOG         &rgb_ug RGB_TOG          &bl BL_DEC  &bl BL_INC   &none   &none   &none
-            >;
+        layer_2 {
+bindings = <                                                                                                                                                                                               
+&none       &none       &none         &none          &none          &none           &none                                                               &none         &none        &none        &none         &none         &none        &none 
+&none       &none       &none         &none          &none          &none           &bootloader                                                         &none         &kp LS(LEFT) &none        &none         &kp LS(RIGHT) &none        &none     
+&none       &none       &none         &none          &none          &none           &none           &none       &none            &none      &none       &none         &kp LEFT     &kp DOWN     &kp UP        &kp RIGHT     &none        &none  
+&none       &none       &none         &none          &none          &none                                       &none            &none                                &none        &none        &none         &none         &none        &none 
+&none       &none       &none         &none          &none                          &kp DELETE      &none       &none            &none      &none       &none                      &none        &none         &none         &none        &none 
+>;
         };
 
     };
