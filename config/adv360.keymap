@@ -139,11 +139,11 @@
 
         layer_0 {
 bindings = <
-&kp GRAVE     &n1           &n2           &n3            &n4              &n5         &tog 1                                                              &mo 3         &n6        &n7              &n8           &n9            &n0          &none
+&kp GRAVE     &n1           &n2           &n3            &n4              &n5         &tog 1                                                              &mo 3         &n6        &n7              &n8           &n9            &n0          &kp DELETE
 &kp TAB       &kp Q         &kp W         &kp E          &kp R            &kp T       &kp K_COPY                                                          &kp C_VOL_UP  &kp Y      &kp U            &kp I         &kp O          &kp P        &kp BSLH
 &lt 2 ESC     &kp A         &kp S         &hm LSHIFT D   &kp F            &kp G       &kp K_PASTE     &kp LALT    &kp LCTRL        &kp RCTRL  &kp CAPS    &kp C_VOL_DN  &kp H      &kp J            &hm RSHIFT K  &kp L          &kp SEMI     &kp SQT
 &sticky_shift &kp Z         &kp X         &kp C          &kp V            &kp B                                   &none            &none                                &kp N      &kp M            &kp COMMA     &kp DOT        &kp FSLH     &kp RSHFT
-&kp LCTRL     &kp LS(GRAVE) &kp LS(N2)    &kp LS(N3)     &kp LS(N7)                   &kp BACKSPACE   &kp LMETA   &mo 1            &mo 1      &kp ENTER   &kp SPACE                &kp MINUS        &kp LS(N6)    &kp LS(N4)     &kp LS(N1)   &kp RCTRL
+&kp LCTRL     &kp LS(GRAVE) &kp LS(N2)    &kp LS(N5)     &kp LS(N7)                   &kp BACKSPACE   &kp LMETA   &mo 1            &mo 1      &kp ENTER   &kp SPACE                &kp MINUS        &kp LS(N6)    &kp LS(N4)     &kp LS(N1)   &kp RCTRL
 >;                                                                                                                                                                                                                     
         };                                                                                                                                                                                                             
                                                                                                                                                                                                                        
@@ -170,7 +170,7 @@ bindings = <
         layer_3_bootloader {
 bindings = <
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none                                                                          &trans   &none       &none       &none   &none   &none   &none
-&none         &none         &none         &none         &none         &none            &bootloader                                                                     &bootloader   &none       &none       &none   &none   &none   &none
+&none         &none         &none         &none         &none         &none            &bootloader                                                                           &none   &none       &none       &none   &none   &none   &none
 &none         &none         &none         &none         &none         &none                  &none   &none   &none                  &bt BT_CLR       &none  &rgb_ug RGB_MEFS_CMD 5   &none       &none       &none   &none   &none   &none
 &none         &none         &none         &none         &none         &none                                  &none                       &none                                       &none       &none       &none   &none   &none   &none
 &none         &none         &none         &none         &none                                &none   &none   &none                       &none  &bl BL_TOG         &rgb_ug RGB_TOG          &bl BL_DEC  &bl BL_INC   &none   &none   &none
